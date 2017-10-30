@@ -8,6 +8,8 @@ public class proves {
 
         int player1;
         int computer = (int)(Math.random()*3+1);
+        int contador=0;
+        int contador_computer=0;
 
 
         Scanner one = new Scanner(System.in);
@@ -17,75 +19,103 @@ public class proves {
         player1 = one.nextInt();
 
 
-        if (player1 == 1 ){
+
+
+            if (player1 == 1) {
 
                 System.out.println("Has elegido piedra");
-                if(computer == 1){
+                if (computer == 1) {
 
                     System.out.println("Los dos habeis sacado piedra");
-                    System.out.println("EMPATE");
+                    System.out.println("EMPATE! Vuelve a intentarlo...");
+                    System.out.println("Player1 "+contador+" - "+contador_computer+" computer");
+                    proves.main(null);
                 }
 
-                if(computer == 2){
+                if (computer == 2) {
                     System.out.println("El ordenador ha elegido papel");
                     System.out.println("DERROTA!");
+                    contador_computer++;
+                    System.out.println("Player1 "+contador+" - "+contador_computer+" computer");
+                    proves.main(null);
+
                 }
 
-                if(computer == 3){
+                if (computer == 3) {
                     System.out.println("El ordenador ha elegido tijera");
                     System.out.println("VICTORIA!");
+                    contador++;
+                    System.out.println("Player1 "+contador+" - "+contador_computer+" computer");
+                    proves.main(null);
+
+                }
+            }
+
+            if (player1 == 2) {
+
+                System.out.println("Has elegido papel");
+                if (computer == 1) {
+
+                    System.out.println("El ordenador ha elegido piedra");
+                    System.out.println("VICTORIA");
+                    contador++;
+                    System.out.println("Player1 "+contador+" - "+contador_computer+" computer");
+                    proves.main(null);
                 }
 
-        }
+                if (computer == 2) {
+                    System.out.println("Los dos habeis elegido papel");
+                    System.out.println("EMPATE! Vuelve a intentarlo...");
+                    System.out.println("Player1 "+contador+" - "+contador_computer+" computer");
+                    proves.main(null);
+                }
 
-        if (player1 == 2 ) {
+                if (computer == 3) {
+                    System.out.println("El ordenador ha elegido tijera");
+                    System.out.println("DERROTA!");
+                    contador_computer++;
+                    System.out.println("Player1 "+contador+" - "+contador_computer+" computer");
+                    proves.main(null);
+                }
 
-            System.out.println("Has elegido papel");
-            if (computer == 1) {
-
-                System.out.println("El ordenador ha elegido piedra");
-                System.out.println("VICTORIA");
             }
 
-            if (computer == 2) {
-                System.out.println("Los dos habeis elegido papel");
-                System.out.println("EMPATE!");
+            if (player1 == 3) {
+
+                System.out.println("Has elegido tijera");
+                if (computer == 1) {
+
+                    System.out.println("El ordenador ha elegido piedra");
+                    System.out.println("DERROTA");
+                    contador_computer++;
+                    System.out.println("Player1 "+contador+" - "+contador_computer+" computer");
+                    proves.main(null);
+                }
+
+                if (computer == 2) {
+                    System.out.println("El ordenador ha elegido papel");
+                    System.out.println("VICTORIA!");
+                    contador++;
+                    System.out.println("Player1 "+contador+" - "+contador_computer+" computer");
+                    proves.main(null);
+                }
+
+                if (computer == 3) {
+                    System.out.println("Los dos habeis elegido tijera");
+                    System.out.println("EMPATE!  Vuelve a intentarlo...");
+                    System.out.println("Player1 "+contador+" - "+contador_computer+" computer");
+                    proves.main(null);
+                }
+
+                if(contador  == 3){
+                    System.out.println("HAS GANADO");
+                }
+
+                if(contador_computer==3){
+                    System.out.println("HAS PERDIDO");
+                }
+
             }
-
-            if (computer == 3) {
-                System.out.println("El ordenador ha elegido tijera");
-                System.out.println("DERROTA!");
-            }
-
-        }
-
-        if (player1 == 3 ) {
-
-            System.out.println("Has elegido tijera");
-            if (computer == 1) {
-
-                System.out.println("El ordenador ha elegido piedra");
-                System.out.println("DERROTA");
-            }
-
-            if (computer == 2) {
-                System.out.println("El ordenador ha elegido papel");
-                System.out.println("VICTORIA!");
-            }
-
-            if (computer == 3) {
-                System.out.println("Los dos habeis elegido tijera");
-                System.out.println("EMPATE!");
-            }
-
-        }
-
-
-
-
-
-
-
 
     }
 
